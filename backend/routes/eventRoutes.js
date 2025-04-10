@@ -14,19 +14,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Get event by ID
-// Get services related to an event
-// router.get("/:id/services", async (req, res) => {
-//   try {
-//     const event = await Event.findById(req.params.id);
-//     if (!event) return res.status(404).json({ message: "Event not found" });
-
-//     res.status(200).json(event.services);
-//   } catch (err) {
-//     res.status(500).json({ message: "Server error", error: err.message });
-//   }
-// });
-
 router.get("/:id/services", async (req, res) => {
   try {
     const event = await Event.findById(req.params.id).populate("services");

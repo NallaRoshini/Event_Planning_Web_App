@@ -24,7 +24,7 @@ const EventsPage = () => {
 
   const handleEventClick = (event) => {
     navigate("/services", {
-      state: { eventId: event._id, eventTitle: event.title },
+      state: { eventId: event._id, eventTitle: event.name },
     });
   };
 
